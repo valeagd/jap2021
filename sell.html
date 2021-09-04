@@ -37,6 +37,11 @@
             <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
             <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
             <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+            <a
+        class="py-2 d-none d-md-inline-block"
+        href="my-profile.html"
+        id="hola"
+      ></a>
         </div>
     </nav>
       <div class="container">
@@ -217,5 +222,9 @@
       <script src="js/dropzone.js"></script>
       <script src="js/init.js"></script>
       <script src="js/sell.js"></script>
+      <script>
+        let usuario = JSON.parse(localStorage.getItem("usuario"));
+        document.getElementById("hola").innerHTML = "Hola, " + usuario.nombre + "!";
+      </script>
     </body>
 </html>
