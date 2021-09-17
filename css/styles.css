@@ -140,3 +140,17 @@ a.custom-card:hover {
   color: orange;
 }
 
+.newcombtn {
+  font-family: 'Raleway', serif;
+  outline: 0;
+  background: #229fbb;
+  width: 10%;
+  border: 0;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+

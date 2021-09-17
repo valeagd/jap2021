@@ -30,14 +30,66 @@
     ></a>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <main role="main">
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <h2>Descripción del producto</h2>
+        <p class="lead">Encontrarás aquí toda la información del producto seleccionado.</p>
+        
+      </div>
+      <h3 id="productname"></h3>
+      <hr class="my-3">
+      <dl>
+        <dt>Costo</dt>
+        <dd>
+          <p id="productcost"></p>
+        </dd>
+        <dt>Descripción</dt>
+        <dd>
+          <p id="productdescription"></p>
+        </dd>
+
+        <dt>Cantidad de productos vendidos</dt>
+        <dd>
+          <p id="prodcount"></p>
+        </dd>
+
+        <dt>Categoría</dt>
+        <dd>
+          <p id="productcategory"></p>
+        </dd>
+
+        <dt>Imágenes ilustrativas</dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="productinfoimg">
+          </div>
+        </dd>
+
+        <dt>Comentarios</dt>
+        <dd>
+          <div id="comments"></div>
+        </dd>
+      </dl>
+
+      <dt>Agregar un comentario</dt>
+      <dd>
+        <div class="container form-group">
+          
+          <dd >
+            Calificar: <input type="number" id="newcommentpoints"></dd>
+              
+          <br />
+          <textarea name="newcom" id="newcomtext" cols="50" rows="5" placeholder="Escribe aquí tu comentario"></textarea>
+          <br>
+          <button class="newcombtn" id="newcomsend" onclick="send()">Comentar </button>
+        </div>
+      </dd>
+
+
+      <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
     </div>
-  </div>
+   
+  </main>
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
@@ -48,7 +100,7 @@
     </div>
   </footer>
   <div id="spinner-wrapper">
-    <div class="lds-ring">
+    <div class="lds-ring" >
       <div></div>
       <div></div>
       <div></div>
@@ -59,6 +111,8 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+  <script src="js/producti-info-com.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <script>
     let usuario = JSON.parse(localStorage.getItem("usuario"));
     document.getElementById("hola").innerHTML = "Hola, " + usuario.nombre + "!";

@@ -7,7 +7,7 @@ function showProducts() {
 
     htmlContentToAppend +=
       `
-        <div class="list-group-item list-group-item-action">
+        <a href="product-info.html" div class="list-group-item list-group-item-action">
                 <div class="row">
                     <div class="col-3">
                         <img src="` +
@@ -33,6 +33,7 @@ function showProducts() {
                     </div>
                 </div>
             </div>
+            </a>
             `;
 
     document.getElementById("prod-list-container").innerHTML =
@@ -51,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
       showProducts(productsArray);
     }
   });
-
 });
 
 //filtrar según rango de precio
@@ -68,36 +68,39 @@ function rangoprecios() {
 
   for (let product of productsArray) {
     if (rangomin <= product.cost && rangomax >= product.cost) {
-      htmlContentToAppend +=
-        `
-      <div class="list-group-item list-group-item-action">
-              <div class="row">
-                  <div class="col-3">
-                      <img src="` +
-        product.imgSrc +
-        `" alt="` +
-        product.description +
-        `" class="img-thumbnail">
-                  </div>
-                  <div class="col">
-                      <div class="d-flex w-100 justify-content-between">
-                          <h4 class="mb-1">` +
-        product.name +
-        " USD$" +
-        product.cost +
-        `</h4>
-                          <small class="text-muted">` +
-        product.soldCount +
-        ` artículos</small>
-                      </div>
-                      <p class="mb-1">` +
-        product.description +
-        `</p>
-                  </div>
-              </div>
-          </div>
-          `;
-      document.getElementById("prod-list-container").innerHTML = htmlContentToAppend;
+      htmlContentToAppend +=  `
+      <class="list-group-item list-group-item-action">
+            <div class="row">
+                <div class="col-3">
+                    <img src="` +
+      product.imgSrc +
+      `" alt="` +
+      product.description +
+      `" class="img-thumbnail">
+                </div>
+                <div class="col">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h4 class="mb-1">` +
+      product.name +
+      " USD$" +
+      product.cost +
+      `</h4>
+                        <small class="text-muted">` +
+      product.soldCount +
+      ` artículos</small>
+                    </div>
+                    <p class="mb-1">` +
+      product.description +
+      `</p>
+                </div>
+            </div>
+            </div>
+        
+        
+        `;
+       
+      document.getElementById("prod-list-container").innerHTML =
+        htmlContentToAppend;
     }
   }
 }
@@ -182,33 +185,19 @@ function ordenarcant() {
 let prodFiltrados = [];
 
 function buscar() {
-
   let textoEscrito = document.getElementById("buscador").value;
-   let prodFiltrados = productsArray.filter(function (product) {
+  let prodFiltrados = productsArray.filter(function (product) {
     return product.name.toLowerCase().indexOf(textoEscrito.toLowerCase()) > -1;
   });
- 
-  showProducts();
- 
-  document.getElementById('buscador').addEventListener('keyup',()=>{
 
+  showProducts(prodFiltrados);
+
+  document.getElementById("buscador").addEventListener("keyup", () => {
     buscar();
-  
-  
   });
-  document.getElementById('buscador').addEventListener('mouseover',()=>{
-  
+  document.getElementById("buscador").addEventListener("mouseover", () => {
     buscar();
-  
-  
   });
-
-
-
 }
 
- 
 
-
-
- 
