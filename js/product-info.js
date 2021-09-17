@@ -76,18 +76,18 @@ function showComments() {
       comment.user +
       "  ";
 
-    let estrellas = "";
-    let numestrellas = commentsArray[i].score;
+    let heart = "";
+    let numheart = commentsArray[i].score;
     for (let i = 1; i <= 5; i++) {
-      if (i <= numestrellas) {
-        estrellas += '<i class="fas fa-heart"></i>';
+      if (i <= numheart) {
+        heart += '<i class="fas fa-heart"></i>';
       } else {
-        estrellas += '<i class="far fa-heart"></i>';
+        heart += '<i class="far fa-heart"></i>';
       }
     }
 
     htmlContentToAppend +=
-      estrellas +
+      heart +
       `</h5>
                             <small class="text-muted">` +
       comment.dateTime +
@@ -106,16 +106,16 @@ function showComments() {
   }
 }
 
-function calificar (numestrellas) {
-  let estrellas = " ";
+function calificar (numheart) {
+  let heart = " ";
   for (let i = 1; i <= 5; i++) {
-    if (i <= numestrellas) {
-      estrellas += '<i class="fas fa-heart"></i>';
+    if (i <= numheart) {
+      heart += '<i class="fas fa-heart"></i>';
     } else {
-      estrellas += '<i class="far fa-heart"></i>';
+      heart += '<i class="far fa-heart"></i>';
     }
   }
-  return estrellas
+  return heart
 } 
 
 
