@@ -22,12 +22,18 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a
-      class="py-2 d-none d-md-inline-block"
-      href="my-profile.html"
-      id="hola"
-    ></a>
+      
+      <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="hola" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        </a>
+      
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="cart.html">Mi Carrito</a>
+          <a class="dropdown-item" href="my-profile.html">Mi Perfil </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="index.html" onclick="desconectar()">Cerrar sesión</a>
+        </div>
+      </div>
     </div>
   </nav>
   <main role="main">
@@ -61,17 +67,35 @@
 
         <dt>Imágenes ilustrativas</dt>
         <dd>
-          <div class="row text-center text-lg-left pt-2" id="productinfoimg">
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" id="carrusel">
+              
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
           </div>
         </dd>
+       
 
-        <dt>Comentarios</dt>
+        <h3> Productos relacionados</h3>
+        <div class="container">
+        <div class="row">
+            <div class="list-group" id="related-products">
+            </div>
+        </div>
+    </div>
+
+    <h3> Comentarios</h3>
         <dd>
           <div id="comments"></div>
         </dd>
-      </dl>
-
-      <dt>Agregar un comentario</dt>
+        <dt>Agregar un comentario</dt>
       <dd>
         <div class="container form-group">
           
@@ -84,6 +108,9 @@
           <button class="newcombtn" id="newcomsend" onclick="send()">Comentar </button>
         </div>
       </dd>
+      </dl>
+
+      
 
 
       <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
@@ -113,6 +140,7 @@
   <script src="js/product-info.js"></script>
   <script src="js/producti-info-com.js"></script>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="js/login.js"></script>
   <script>
     let usuario = JSON.parse(localStorage.getItem("usuario"));
     document.getElementById("hola").innerHTML = "Hola, " + usuario.nombre + "!";

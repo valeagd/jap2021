@@ -27,7 +27,10 @@ function verificar() {
         localStorage.setItem('usuario', JSON.stringify(usuario));
        
     }
-
     }
 
-   
+    function desconectar () {
+        localStorage.clear();
+       
+
+    }   

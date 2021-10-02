@@ -21,12 +21,18 @@
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-        <a
-        class="py-2 d-none d-md-inline-block"
-        href="my-profile.html"
-        id="hola"
-      ></a>
+        <div class="dropdown">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="hola" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      
+          </a>
+        
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="cart.html">Mi Carrito</a>
+            <a class="dropdown-item" href="my-profile.html">Mi Perfil </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="index.html"  onclick="desconectar()">Cerrar sesión</a>
+          </div>
+        </div>
       </div>
     </nav>
     <main role="main" class="pb-5">
@@ -92,6 +98,7 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/categories.js"></script>
+    <script src="js/login.js"></script>
     <script>
       let usuario = JSON.parse(localStorage.getItem("usuario"));
       document.getElementById("hola").innerHTML = "Hola, " + usuario.nombre + "!";
