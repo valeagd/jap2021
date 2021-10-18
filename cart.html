@@ -54,14 +54,46 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
-  </div>
+    <main role="main" class="pb-5">
+      <div class="text-center p-4">
+          <h2>Carrito</h2>
+        </div>
+        <div class="container">
+          <div class="row">
+              <div class="list-group" id="carrito">
+              </div>
+          </div>
+      </div>
+      
+      <div class="container">
+        <p> Método de envío</p>
+        <form action="">
+          <label for="tipo-de-envio">Tipo de envío</label>
+          <input type="radio" name="tipo"> Premium (2 a 5 días)
+          <input type="radio" name="tipo"> Express (5 a 8 días)
+          <input type="radio" name="tipo"> Standard (12 a 15 días) <br>
+          <label for="direccion">Dirección</label>
+          <input type="text" placeholder="Calle">
+          <input type="text" placeholder="Número">
+          <input type="text" placeholder="Esquina"><br>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>País</option>
+            <option value="1">Uruguay</option>
+            <option value="2">Argentina</option>
+            <option value="3">Brasil</option>
+          </select>
+        </form>
+      </div>
+        
+      <div class="container">
+
+
+        <p>Subtotal</p> <span id="ver-subtotal"></span>
+        <p>Total</p>
+      </div>
+  </main>
+
+  
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
