@@ -19,38 +19,41 @@ function showProducts() {
     let product = productsArray[i];
 
     htmlContentToAppend +=
-      `
-        <a href="product-info.html" div class="list-group-item list-group-item-action">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="` +
-      product.imgSrc +
-      `" alt="` +
-      product.description +
-      `" class="img-thumbnail">
-                    </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">` +
-      product.name +
-      " USD$" +
-      product.cost +
-      `</h4>
-                            <small class="text-muted">` +
-      product.soldCount +
-      ` artículos</small>
-                        </div>
-                        <p class="mb-1">` +
-      product.description +
-      `</p>
-                    </div>
-                </div>
-            </div>
-            </a>
-            `;
+    `
+   
+    <a href="product-info.html"  div class="col-sm-6 list-group-item list-group-item-action">
+               
+            <div class="row">
+                  <div class=""col-sm-3" ">
+                      <img src="` +
+    product.imgSrc +
+    `" alt="` +
+    product.description +
+    `" class="img-thumbnail">
+                  </div>
+                  <div class="col">
+                      <div class="d-flex w-100 justify-content-between">
+                          <h4 class="mb-1">` +
+    product.name +
+    " USD$" +
+    product.cost +
+    `</h4>
+                          <small class="text-muted">` +
+    product.soldCount +
+    ` artículos</small>
+                      </div>
+                      <p class="mb-1">` +
+    product.description +
+    `</p>
+                  </div>
+              </div>
+          </div>
+          </a>
+         
+          `;
 
-    document.getElementById("prod-list-container").innerHTML =
-      htmlContentToAppend;
+  document.getElementById("prod-list-container").innerHTML =
+    htmlContentToAppend;
   }
 }
 

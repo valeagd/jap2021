@@ -31,6 +31,8 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
+  <link href="css/profile.css" rel="stylesheet">
+ 
 </head>
 
 <body>
@@ -54,14 +56,25 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+  <div class="text-center p-4">
+    <h2>Mi perfil</h2>
+</div>
+<div class="container">
+  <div class="perfilcontainer">
+
+    <span>Nombre </span> <input type="text" name="" id="nombre"><br><br>
+    <span>Apellido </span> <input type="text" name="" id="apellido"><br><br>
+    <span>Edad </span> <input type="text" name="" id="edad"><br><br>
+    <span>Correo </span> <input type="text" name="" id="correo"><br><br>
+    <span>Teléfono </span> <input type="text" name="" id="telefono"><br><br>
+    <button class="guardar" id="" onclick="guardarCambios()">Guardar cambios </button>
+
   </div>
+
+  
+    
+   
+</div>
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
