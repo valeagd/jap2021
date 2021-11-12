@@ -31,6 +31,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
+   <link rel="stylesheet" href="css/cart.css"> 
 </head>
 
 <body>
@@ -65,17 +66,19 @@
           </div>
       </div>
       
+      
+
       <div class="container">
-        <p> Método de envío</p>
+        <h3>Método de envío</h3>
         <form action="">
-          <label for="tipo-de-envio">Tipo de envío</label>
-          <input type="radio" name="tipo"> Premium (2 a 5 días)
-          <input type="radio" name="tipo"> Express (5 a 8 días)
-          <input type="radio" name="tipo"> Standard (12 a 15 días) <br>
+          <label for="tipo-de-envio">Tipo de envío</label><br>
+          <input type="radio" name="envio" value="0.15" onchange="subtotal();" checked> Premium (2 a 5 días) <br>
+          <input type="radio" name="envio" value="0.07" onchange="subtotal();"> Express (5 a 8 días) <br>
+          <input type="radio" name="envio" value="0.05" onchange="subtotal();"> Standard (12 a 15 días) <br>
           <label for="direccion">Dirección</label>
-          <input type="text" placeholder="Calle">
-          <input type="text" placeholder="Número">
-          <input type="text" placeholder="Esquina"><br>
+          <input type="text" id="calle" placeholder="Calle">
+          <input type="text" id="nump" placeholder="Número">
+          <input type="text" id="esq" placeholder="Esquina"><br>
           <select class="form-select" aria-label="Default select example">
             <option selected>País</option>
             <option value="1">Uruguay</option>
@@ -84,14 +87,50 @@
           </select>
         </form>
       </div>
+
+      <!--modal forma de pago-->
+      <div class="container">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Seleccionar forma de pago
+        </button>
+      </div>
+     
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Seleccionar forma de pago </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" >
+              <form class="needs-validation" novalidate>
+                <input type="radio" name="tipo-envio" id="tar"> Tarjeta de crédito <br> <br>
+                <input type="number" name="tipo-envio" id="num-tarjeta" placeholder="Número de la tarjeta"> <input type="number" name="tipo-envio" id="cvv-tarjeta" placeholder="CVV"> <br><br>
+                <input type="number" name= "tipo-envio" id= "venc-tarjeta" placeholder="Vencimiento"> <br>
+                <input type="radio" name="tipo-envio" id="transf"> Trasferencia bancaria <br>
+                <input type="number" name="tipo-envio" id="num-cuenta" placeholder="Nro de cuenta"> <br>
+
+
+              </form>
+             
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" onclick="validar()">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
         
       <div class="container">
-
-        <p>Subtotal</p> <span id="ver-subtotal"></span>
-        <p>Total</p>
+        <p>Subtotal <span id="ver-subtotal"></span></p> 
+        <p>Costo de envío <span id="ver-costo-envio"></span></p> 
+        <p>Total <span id="ver-total"></span></p> 
+        <button class="btn btn-primary" onclick="validardir();"> Enviar</button>
       </div>
   </main>
-
   
   <div id="spinner-wrapper">
     <div class="lds-ring">
