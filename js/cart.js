@@ -26,7 +26,7 @@ function mostrarcarrito(array) {
                       <div class="d-flex w-100 justify-content-between">
                           <h4 class="mb-1">` +
                           article.name  + `</h4> ` +          
-    `<button class= btn btn-danger onclick="eliminar ($[i])";> Eliminar</button> </div>
+    ` </div>
                       <p class="mb-1">` +
                       article.currency +  '</p>' + '<p class="precio">' + article.unitCost + '</p>' + 
                       '<p>' + 'Cantidad' + '</p>' + '<input type= "number" value=2 min="0"  onchange="subtotal()">' + '</div></div></div>'
@@ -65,12 +65,7 @@ function subtotal() {
 
 }
 
-function eliminar(i){
-    articlesArray.articles.splice(i,1);
-    mostrarcarrito(articlesArray)
-    subtotal()
 
-}
 
 //modal
 

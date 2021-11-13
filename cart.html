@@ -55,6 +55,7 @@
       </div>
     </div>
   </nav>
+
     <main role="main" class="pb-5">
       <div class="text-center p-4">
           <h2>Carrito</h2>
@@ -66,7 +67,6 @@
           </div>
       </div>
       
-      
 
       <div class="container">
         <h3>Método de envío</h3>
@@ -75,16 +75,22 @@
           <input type="radio" name="envio" value="0.15" onchange="subtotal();" checked> Premium (2 a 5 días) <br>
           <input type="radio" name="envio" value="0.07" onchange="subtotal();"> Express (5 a 8 días) <br>
           <input type="radio" name="envio" value="0.05" onchange="subtotal();"> Standard (12 a 15 días) <br>
-          <label for="direccion">Dirección</label>
-          <input type="text" id="calle" placeholder="Calle">
-          <input type="text" id="nump" placeholder="Número">
-          <input type="text" id="esq" placeholder="Esquina"><br>
-          <select class="form-select" aria-label="Default select example">
-            <option selected>País</option>
-            <option value="1">Uruguay</option>
-            <option value="2">Argentina</option>
-            <option value="3">Brasil</option>
-          </select>
+        </form>
+
+        <form action="" class="needs-validation">
+          <label for="direccion">Dirección
+            <input type="text" class="form-control" id="calle" placeholder="Calle">
+            <input type="text" class="form-control" id="nump" placeholder="Número">
+            <input type="text" class="form-control" id="esq" placeholder="Esquina">
+            <select class="form-select" aria-label="Default select example">
+              <option selected>País</option>
+              <option value="1">Uruguay</option>
+              <option value="2">Argentina</option>
+              <option value="3">Brasil</option>
+            </select>
+          </label>
+         <br>
+          
         </form>
       </div>
 
@@ -111,10 +117,7 @@
                 <input type="number" name= "tipo-envio" id= "venc-tarjeta" placeholder="Vencimiento"> <br>
                 <input type="radio" name="tipo-envio" id="transf"> Trasferencia bancaria <br>
                 <input type="number" name="tipo-envio" id="num-cuenta" placeholder="Nro de cuenta"> <br>
-
-
               </form>
-             
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -123,13 +126,15 @@
           </div>
         </div>
       </div>
+            <!--fin modal forma de pago-->
         
-      <div class="container">
-        <p>Subtotal <span id="ver-subtotal"></span></p> 
-        <p>Costo de envío <span id="ver-costo-envio"></span></p> 
-        <p>Total <span id="ver-total"></span></p> 
-        <button class="btn btn-primary" onclick="validardir();"> Enviar</button>
-      </div>
+            <div class="container">
+              <h3>Costos</h3>
+              <p>Subtotal <span id="ver-subtotal"></span></p> 
+              <p>Costo de envío <span id="ver-costo-envio"></span></p> 
+              <p>Total <span id="ver-total"></span></p> 
+              <button class="btn btn-primary" onclick="validardir();"> Enviar</button>
+            </div>
   </main>
   
   <div id="spinner-wrapper">
