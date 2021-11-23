@@ -65,8 +65,6 @@ function subtotal() {
 
 }
 
-
-
 //modal
 
 document.getElementById("tar").addEventListener("change", function () {
